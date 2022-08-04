@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class TestEX {
 
-    @Test
+  //  @Test
     public void testExample(){
         System.out.println("I'm TEST");
 

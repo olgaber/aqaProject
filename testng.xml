@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Default Suite">
+    <test thread-count="5" name="aqaProject">
+        <groups>
+            <run>
+                <include name="groupA"/>
+                <include name="groupB"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.provectus.tests.session16.LoginTest"/>
+
+            <parameter name="username1"  value="tomsmith"/>
+            <parameter name="password1"  value="SuperSecretPassword!"/>
+            <parameter name="role1"  value="role11"/>
+
+        </classes>
+
+    </test>
+
+</suite>
+
+
+
+
+
