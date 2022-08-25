@@ -1,4 +1,4 @@
-package com.provectus.tests.session19;
+package com.provectus.tests.session21;
 
 import com.provectus.pages.MainPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -27,12 +27,11 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-
     }
 
     @AfterClass
     public void tearDown(){
-        //driver.quit();
+        driver.quit();
     }
 
     public MainPage openApp(){

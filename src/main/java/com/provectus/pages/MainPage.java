@@ -22,4 +22,14 @@ public class MainPage extends BasePage {
         driver.findElement(By.linkText("Challenging DOM")).click();
         return new ChallengingDomPage(driver);
     }
+
+    public DownloadPage goToDownloadPage(){
+        driver.findElement(By.linkText("File Download")).click();
+        return new DownloadPage(driver);
+    }
+
+    public UploadPage goToUploadPage(){
+        driver.findElement(By.linkText("File Upload")).click();
+        return new UploadPage(driver);
+    }
 }
