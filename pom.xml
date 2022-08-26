@@ -14,7 +14,8 @@
         <testngVersion>7.6.1</testngVersion>
         <fakerVersion>1.0.2</fakerVersion>
         <seleniumVersion>4.4.0</seleniumVersion>
-        <webdrivermanager>5.2.3</webdrivermanager>
+        <webdrivermanagerVersion>5.2.3</webdrivermanagerVersion>
+        <selenideVersion>6.7.2</selenideVersion>
     </properties>
 
     <dependencies>
@@ -44,7 +45,14 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager}</version>
+            <version>${webdrivermanagerVersion}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenideVersion}</version>
         </dependency>
 
     </dependencies>
