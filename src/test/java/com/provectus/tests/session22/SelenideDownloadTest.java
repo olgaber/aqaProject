@@ -25,8 +25,8 @@ public class SelenideDownloadTest {
     @Test
     public void DownloadUploadTest() throws IOException, URISyntaxException, InterruptedException {
 
-        SelenideDownloadPage sdp = new SelenideDownloadPage();
-        SelenideUploadPage sup = new SelenideUploadPage();
+        SelenideDownloadPage selenideDownloadPage = new SelenideDownloadPage();
+        SelenideUploadPage selenideUploadPage = new SelenideUploadPage();
 
         // Configuration.browser = "firefox";
         Configuration.baseUrl = "https://the-internet.herokuapp.com";
@@ -34,7 +34,7 @@ public class SelenideDownloadTest {
 
         open("/download");
 
-        String fileName = sdp.getFileName();
+        String fileName = selenideDownloadPage.getFileName();
         String fileUrl = Configuration.baseUrl + "/download/" + fileName;
 
         File file = Selenide.download(fileUrl);
@@ -51,10 +51,10 @@ public class SelenideDownloadTest {
 
         open("/upload");
 
-        sup.selectFile(file.getPath());
+        selenideUploadPage.selectFile(file.getPath());
         TimeUnit.SECONDS.sleep(3);
-        sup.uploadFile();
-// ???? открывется страница This site can't be reached
-        Assert.assertEquals(sup.getFeedback(), "File Uploaded!");
+        selenideUploadPage.uploadFile();
+
+        Assert.assertEquals(selenideUploadPage.getFeedback(), "File Uploaded!");
     }
 }
