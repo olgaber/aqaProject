@@ -12,12 +12,12 @@ public class OrdersApiTests {
     @Test
     public void createNewOrder() throws IOException {
         Order newOrder = createNewOrderMethod();
-        Assert.assertNotNull(newOrder.getId().toString());
+        Assert.assertNotNull(newOrder.getId());
     }
 
     @Test
     public void getOrder() throws IOException {
-        String id = createNewOrderMethod().getId().toString();
+        String id = createNewOrderMethod().getId();
         ApiTest apiTest = new ApiTest();
         String retrievedId = apiTest.getOrder(id).getId();
 
@@ -26,7 +26,7 @@ public class OrdersApiTests {
 
     @Test
     public void deleteOrder() throws IOException {
-        String id = createNewOrderMethod().getId().toString();
+        String id = createNewOrderMethod().getId();
         ApiTest apiTest = new ApiTest();
         apiTest.deleteOrder(id);
         //How to make sure the order was deleted?
@@ -42,7 +42,6 @@ public class OrdersApiTests {
     public Order createNewOrderMethod() throws IOException {
 
         ApiTest apiTest = new ApiTest();
-        //String newOrderId = apiTest.createOrder();
 
         Order order = new Order();
         order.setId(null);
@@ -51,8 +50,8 @@ public class OrdersApiTests {
         order.setQty(4);
         order.setStatus("available");
 
-        Order newOrder = apiTest.serializeOrder(order);
+        order = apiTest.serializeOrder(order);
 
-        return newOrder;
+        return order;
     }
 }
