@@ -80,7 +80,7 @@
         </dependency>
 
     </dependencies>
-    <!--<build>
+    <build>
         <plugins>
 
             <plugin>
@@ -92,13 +92,13 @@
                         <url>http://site.url</url>
                     </systemProperties>
                     <suiteXmlFiles>
-                        &lt;!&ndash;<suiteXmlFile>testng.xml</suiteXmlFile>&ndash;&gt;
+                        <suiteXmlFile>api.testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
 
         </plugins>
-    </build>-->
+    </build>
 
     <profiles>
         <profile>
